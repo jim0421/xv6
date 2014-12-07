@@ -186,11 +186,11 @@ clean:
 	$(UPROGS)
 
 # make a printout
-FILES = $(shell grep -v '^\#' runoff.list)
-PRINT = runoff.list runoff.spec README toc.hdr toc.ftr $(FILES)
+FILES = $(shell grep -v '^\#' ../tools/runoff.list)
+PRINT = ../tools/runoff.list ../tools/runoff.spec README ../tools/toc.hdr ../tools/toc.ftr $(FILES)
 
 xv6.pdf: $(PRINT)
-	./runoff
+	../tools/runoff
 	ls -l xv6.pdf
 
 print: xv6.pdf
@@ -242,7 +242,7 @@ EXTRA=\
 	mkfs.c ulib.c user.h cat.c echo.c forktest.c grep.c kill.c\
 	ln.c ls.c mkdir.c rm.c stressfs.c usertests.c wc.c zombie.c\
 	printf.c umalloc.c\
-	README dot-bochsrc *.pl toc.* runoff runoff1 runoff.list\
+	README dot-bochsrc *.pl ../tools/toc.* ../tools/runoff ../tools/runoff1 ../tools/runoff.list\
 	.gdbinit.tmpl gdbutil\
 
 dist:
